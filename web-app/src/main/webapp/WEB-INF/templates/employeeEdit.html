@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Edit employee</title>
+
+    <link rel="stylesheet"
+          href="../../resources/static/css/font-awesome.min.css"
+          th:href="@{/resources/static/css/font-awesome.min.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/style.css"
+          th:href="@{/resources/static/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <nav class="pl-sm-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/Emp.png"
+                                              th:src="@{/resources/static/img/Emp.png}"
+                                              height="32" width="50"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#" th:href="@{/employees}">
+                    <span class="hidden-folded inline">Employees</span>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <h2>Edit employee</h2>
+    <hr/>
+    <form class="form-horizontal" id="employeePage" action="#" th:action="@{/employee/edit}" method="post">
+
+                <input type="hidden" th:field="*{employee.getId()}" name="id" />
+                <label>Employee name:</label>
+                <input type="text" class="form-input" name="first_name" th:field="*{employee.getFirst_name()}" id="employee.getFirst_name()">
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label">
+                    <a href="#" th:href="@{/employees}">Back to List</a>
+                </label>
+                <div class="col-sm-11">
+                    <input type="submit" value="Save"/>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+        <hr/>
+
+    </form>
+</div>
+
+<script type="text/javascript" th:src="@{/resources/static/assets/jquery/jquery-3.1.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/resources/static/assets/jquery/jquery.validate.js}"></script>
+<script type="text/javascript" th:src="@{/resources/static/assets/pages/js/validate.js}"></script>
+
+</body>
+</html>

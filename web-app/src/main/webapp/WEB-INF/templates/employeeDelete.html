@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Delete Employee</title>
+
+    <link rel="stylesheet" href="#" th:href="@{/resources/static/assets/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" href="#" th:href="@{/resources/static/assets/bootstrap/bootstrap-theme.min.css}">
+    <link rel="stylesheet" href="#" th:href="@{/resources/static/assets/pages/css/custom.css}">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <nav class="navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
+
+        <a class="navbar-brand" href="#" th:href="@{/employees}">
+            <span class="hidden-folded inline">Employees</span>
+        </a>
+
+
+    </nav>
+
+    <h2>Delete</h2>
+
+    <h4>&nbsp;&nbsp;Do you really want to delete this employee?</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            First Name:
+        </dt>
+        <dd th:text="${employee.getFirst_name()}">
+
+        </dd>
+        <dt>
+            Last Name:
+        </dt>
+        <dd th:text="${employee.getLast_name()}">
+
+        </dd>
+
+    </dl>
+
+    <hr/>
+
+
+    <dl class="dl-horizontal">
+        <dt >
+            <strong>
+                <a href="#" th:href="@{/employees}">Back to List</a>
+            </strong>
+        </dt>
+        <dd >
+            <form action="#" th:action="@{/employee/delete}" th:object="${employee}" method="post">
+                <input type="hidden" th:field="*{id}" />
+                <div class="form-group">
+                    <input type="submit" value="Delete"/>
+                </div>
+            </form>
+        </dd>
+    </dl>
+
+
+
+
+
+</div>
+
+</body>
+</html>

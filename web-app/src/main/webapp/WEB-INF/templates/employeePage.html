@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Employees</title>
+    <link rel="stylesheet"
+          href="../../resources/static/css/font-awesome.min.css"
+          th:href="@{/resources/static/css/font-awesome.min.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/style.css"
+          th:href="@{/resources/static/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <nav class="pl-sm-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/Emp.png"
+                                              th:src="@{/resources/static/img/Emp.png}"
+                                              height="32" width="50"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#" th:href="@{/employees}">
+                    <span class="hidden-folded inline">Employee</span>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <h2>EMPLOYEES</h2>
+    <p>
+        <a href="#" th:href="@{/employee/add}">Add New Employee</a>
+    </p>
+
+    <p>
+        <a href="#" th:href="@{/employee/edit}">Edit Employee</a>
+    </p>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>BIRTHDAY DATE</th>
+            <th>GENDER</th>
+            <th>JOB TITLE</th>
+            <th>DEPARTMENT ID</th>
+        </tr>
+
+        <tr th:each="employee:${employees}">
+            <td th:text="${employee.getId()}"></td>
+            <td th:text="${employee.getFirst_name()}"></td>
+            <td th:text="${employee.getLast_name()}"></td>
+            <td th:text="${employee.getDate_of_birth()}"></td>
+            <td th:text="${employee.getGender()}"></td>
+            <td th:text="${employee.getJob_title()}"></td>
+            <td th:text="${employee.getDepartment_id()}"></td>
+
+            <td>
+                <input type="button" value="Edit"
+                       onclick="window.location.href = '${updateButton}'"/>
+
+            </td>
+            <td>
+                <input type="button" value="Delete"
+                       onclick="window.location.href = '${deleteButton}'"/>
+            </td>
+
+        </tr>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>

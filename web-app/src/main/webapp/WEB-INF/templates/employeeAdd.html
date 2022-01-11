@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Add employee</title>
+    <link rel="stylesheet"
+
+          th:href="@{/resources/static/css/font-awesome.min.css}">
+    <link rel="stylesheet"
+          href="../../resources/static/css/bootstrap.css"
+          th:href="@{/resources/static/css/bootstrap.css}">
+    <link rel="stylesheet"
+
+          th:href="@{/resources/static/css/style.css}">
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <nav class="pl-sm-2 navbar navbar-expand-sm navbar-dark bg-dark text-light  p-0">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/" class="navbar-brand"><img src="../../resources/static/img/Emp.png"
+                                              th:src="@{/resources/static/img/Emp.png}"
+                                              height="32" width="50"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <a class="navbar-brand" href="#" th:href="@{/employees}">
+                    <span class="hidden-folded inline">Employees</span>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <h2>Add new employee</h2>
+    <hr/>
+
+</div>
+
+<form class="form-horizontal" id="employeePage" action="#" th:action="@{/employee/add}" method="post">
+
+    <div class="form-group">
+        <label for="employee.getFirst_name()" class="col-sm-1 control-label">First name:</label>
+        <div class="col-sm-12">
+            <input id="employee.getFirst_name()" name="first_name" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="employee.getLast_name()" class="col-sm-1 control-label">Last name:</label>
+        <div class="col-sm-12">
+            <input id="employee.getLast_name()" name="last_name" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="employee.getDate_of_birth()" class="col-sm-1 control-label">Date :</label>
+        <div class="col-sm-12">
+            <input id="employee.getDate_of_birth()" name="date_of_birth" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="employee.getJob_title()" class="col-sm-1 control-label">Job :</label>
+        <div class="col-sm-12">
+            <input id="employee.getJob_title()" name="job_title" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="employee.getGender()" class="col-sm-1 control-label">Gender :</label>
+        <div class="col-sm-12">
+            <input id="employee.getGender()" name="gender" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="employee.getDepartment_id()" class="col-sm-1 control-label">Department Id :</label>
+        <div class="col-sm-12">
+            <input id="employee.getDepartment_id()" name="department_id" type="text" class="form-input" value=""/>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="form-group">
+        <label class="col-sm-1 control-label">
+            <a href="#" th:href="@{/employees}">Back to List</a>
+        </label>
+        <div class="col-sm-11">
+            <input type="submit" value="Add"/>
+
+        </div>
+    </div>
+</form>
+
+<script src="../../resources/static/js/jquery.min.js"
+        th:src="@{/resources/static/js/jquery.min.js}"></script>
+<script src="../../resources/static/js/popper.min.js"
+        th:src="@{/resources/static/js/popper.min.js}"></script>
+<script src="../../resources/static/js/bootstrap.min.js"
+        th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+</body>
+</html>
